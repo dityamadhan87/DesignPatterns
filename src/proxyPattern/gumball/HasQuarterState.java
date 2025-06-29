@@ -1,4 +1,4 @@
-package proxyPattern;
+package proxyPattern.gumball;
 
 import java.util.Random;
 
