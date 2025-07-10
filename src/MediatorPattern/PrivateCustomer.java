@@ -9,14 +9,15 @@ public class PrivateCustomer implements ConsumerIF {
     }
 
     @Override
-    public double requestPrice(int quantity) {
-        System.out.println(name + " requests " + quantity + " bottles of wine.");
-        double totalPrice = mediator.offerDetermine(quantity); // minta harga dari mediator
-        return totalPrice;
+    public void register(MediatorIF mediator) {
+        this.mediator = mediator;
+        mediator.addConsumer(this);
     }
 
     @Override
-    public void register(MediatorIF mediator) {
-        this.mediator = mediator;
+    public double requestPrice(int quantity) {
+        System.out.println(name + " requests " + quantity + " bottles of wine.");
+        double totalPrice = mediator.offerDetermine(quantity);
+        return totalPrice;
     }
 }

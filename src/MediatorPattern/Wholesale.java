@@ -19,11 +19,10 @@ public class Wholesale implements MediatorIF {
 
         System.out.println(offers);
 
-        var price = Collections.min(offers);  // ambil harga terendah
-        var strPrice = NumberFormat.getCurrencyInstance().format(price);
+        double bestOffer = Collections.min(offers);
+        String strPrice = NumberFormat.getCurrencyInstance().format(bestOffer);
         System.out.println("The best offer for " + quantity + " bottles is: " + strPrice);
-
-        return price;
+        return bestOffer;
     }
 
     // Tambahan: metode registrasi produsen/konsumen
